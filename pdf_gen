@@ -230,7 +230,6 @@
         
         <div class="buttons">
             <button class="btn btn-primary" onclick="generatePDF()">Generate PDF</button>
-            <button class="btn btn-secondary" onclick="loadSample()">Load Sample Config</button>
             <button class="btn btn-secondary" onclick="downloadPDF()">Download PDF</button>
         </div>
         
@@ -240,66 +239,7 @@
     </div>
 
     <script>
-        const sampleConfig = {
-            "title": "Amma's Dues Statement",
-            "date": "13th July 2025",
-            "currency": "Rs.",
-            
-            "sections": {
-                "dues_to_me": {
-                    "title": "Dues To Me",
-                    "months": {
-                        "March 2025": [
-                            { "description": "Annapurna 12.4 interest", "amount": 1712 },
-                            { "description": "Asirvad interest", "amount": 4930 },
-                            { "description": "Muthoot 12 interest", "amount": 4586 },
-                            { "description": "Annapurna 12.25 interest", "amount": 936 }
-                        ],
-                        "April 2025": [
-                            { "description": "Annapurna 12.4 interest", "amount": 1896 },
-                            { "description": "Asirvad interest", "amount": 5458 },
-                            { "description": "Muthoot 12 interest", "amount": 4438 },
-                            { "description": "Annapurna 12.25 interest", "amount": 906 }
-                        ]
-                    },
-                    "other": [
-                        { "description": "Dividends", "amount": 788 }
-                    ]
-                },
-                
-                "dues_to_appa": {
-                    "title": "Dues To Appa",
-                    "months": {
-                        "March 2025": [
-                            { "description": "Asirvad interest", "amount": 3286 },
-                            { "description": "Muthoot 10.26 interest", "amount": 783 },
-                            { "description": "Muthoot 12 interest", "amount": 4586 }
-                        ],
-                        "April 2025": [
-                            { "description": "Asirvad interest", "amount": 3638 },
-                            { "description": "Muthoot 10.26 interest", "amount": 758 },
-                            { "description": "Muthoot 12 interest", "amount": 4438 }
-                        ]
-                    }
-                },
-                
-                "amma_income": {
-                    "title": "Amma's Income",
-                    "months": {
-                        "March 2025": [
-                            { "description": "Asirvad interest", "amount": 3286 },
-                            { "description": "Muthoot 12 interest", "amount": 13759 },
-                            { "description": "Hari rent", "amount": 4586 }
-                        ],
-                        "April 2025": [
-                            { "description": "Asirvad interest", "amount": 3638 },
-                            { "description": "Muthoot 12 interest", "amount": 13315 },
-                            { "description": "Hari rent", "amount": 4438 }
-                        ]
-                    }
-                }
-            }
-        };
+
         
         function formatAmount(amount, currency) {
             return `${currency} ${amount.toLocaleString('en-IN')}`;
@@ -411,7 +351,7 @@
         }
         
         function loadSample() {
-            document.getElementById('configInput').value = JSON.stringify(sampleConfig, null, 2);
+            // Sample config functionality removed for public hosting
         }
         
         function downloadPDF() {
@@ -550,9 +490,9 @@
             printWindow.print();
         }
         
-        // Load sample config on page load
+        // Page initialization
         window.onload = function() {
-            loadSample();
+            // No default config loaded - ready for manual input
         };
     </script>
 </body>
