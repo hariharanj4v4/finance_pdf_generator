@@ -103,52 +103,52 @@
             background: white;
         }
         
-        /* PDF Styles */
+        /* PDF Styles - Optimized for readability */
         .pdf-content {
             font-family: 'Arial', sans-serif;
-            font-size: 12px;
-            line-height: 1.4;
+            font-size: 14px;
+            line-height: 1.5;
             color: #333;
-            padding: 20px;
+            padding: 15px;
         }
         
         .pdf-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 2px solid #2c3e50;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
         
         .pdf-header h1 {
-            font-size: 24px;
+            font-size: 28px;
             color: #2c3e50;
-            margin: 0;
+            margin: 0 0 8px 0;
             font-weight: bold;
         }
         
         .pdf-header .date {
-            font-size: 14px;
+            font-size: 16px;
             color: #7f8c8d;
-            margin-top: 5px;
+            margin: 0;
         }
         
         .pdf-section {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             page-break-inside: avoid;
         }
         
         .pdf-section-title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             color: #34495e;
-            margin-bottom: 15px;
-            padding: 8px 12px;
+            margin-bottom: 12px;
+            padding: 10px 15px;
             background-color: #ecf0f1;
             border-left: 4px solid #3498db;
         }
         
         .pdf-month-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             border: 1px solid #ddd;
             border-radius: 5px;
             overflow: hidden;
@@ -157,7 +157,8 @@
         .pdf-month-header {
             background-color: #f8f9fa;
             font-weight: bold;
-            padding: 10px 15px;
+            font-size: 16px;
+            padding: 12px 15px;
             border-bottom: 1px solid #ddd;
             color: #2c3e50;
         }
@@ -165,8 +166,10 @@
         .pdf-amount-row {
             display: flex;
             justify-content: space-between;
-            padding: 8px 15px;
+            padding: 10px 15px;
             border-bottom: 1px solid #eee;
+            min-height: 20px;
+            align-items: center;
         }
         
         .pdf-amount-row:last-child {
@@ -180,13 +183,16 @@
         .pdf-description {
             flex: 1;
             color: #555;
+            font-size: 14px;
+            padding-right: 10px;
         }
         
         .pdf-amount {
             font-weight: bold;
             color: #27ae60;
             text-align: right;
-            min-width: 80px;
+            min-width: 100px;
+            font-size: 14px;
         }
         
         .pdf-total-row {
@@ -197,7 +203,14 @@
         
         .pdf-total-row .pdf-amount {
             color: #27ae60;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .pdf-total-row .pdf-description {
+            font-size: 15px;
+            font-weight: bold;
+            color: #2c3e50;
         }
         
         @media print {
@@ -239,8 +252,6 @@
     </div>
 
     <script>
-
-        
         function formatAmount(amount, currency) {
             return `${currency} ${amount.toLocaleString('en-IN')}`;
         }
@@ -350,10 +361,6 @@
             }
         }
         
-        function loadSample() {
-            // Sample config functionality removed for public hosting
-        }
-        
         function downloadPDF() {
             const previewDiv = document.getElementById('preview');
             if (!previewDiv.innerHTML.trim()) {
@@ -371,13 +378,13 @@
                     <style>
                         @page {
                             size: A4;
-                            margin: 20mm;
+                            margin: 15mm;
                         }
                         
                         body {
                             font-family: 'Arial', sans-serif;
-                            font-size: 12px;
-                            line-height: 1.4;
+                            font-size: 14px;
+                            line-height: 1.5;
                             color: #333;
                             margin: 0;
                             padding: 0;
@@ -385,49 +392,49 @@
                         
                         .pdf-content {
                             font-family: 'Arial', sans-serif;
-                            font-size: 12px;
-                            line-height: 1.4;
+                            font-size: 14px;
+                            line-height: 1.5;
                             color: #333;
-                            padding: 20px;
+                            padding: 15px;
                         }
                         
                         .pdf-header {
                             text-align: center;
-                            margin-bottom: 30px;
+                            margin-bottom: 25px;
                             border-bottom: 2px solid #2c3e50;
-                            padding-bottom: 15px;
+                            padding-bottom: 12px;
                         }
                         
                         .pdf-header h1 {
-                            font-size: 24px;
+                            font-size: 28px;
                             color: #2c3e50;
-                            margin: 0;
+                            margin: 0 0 8px 0;
                             font-weight: bold;
                         }
                         
                         .pdf-header .date {
-                            font-size: 14px;
+                            font-size: 16px;
                             color: #7f8c8d;
-                            margin-top: 5px;
+                            margin: 0;
                         }
                         
                         .pdf-section {
-                            margin-bottom: 30px;
+                            margin-bottom: 25px;
                             page-break-inside: avoid;
                         }
                         
                         .pdf-section-title {
-                            font-size: 16px;
+                            font-size: 18px;
                             font-weight: bold;
                             color: #34495e;
-                            margin-bottom: 15px;
-                            padding: 8px 12px;
+                            margin-bottom: 12px;
+                            padding: 10px 15px;
                             background-color: #ecf0f1;
                             border-left: 4px solid #3498db;
                         }
                         
                         .pdf-month-group {
-                            margin-bottom: 20px;
+                            margin-bottom: 18px;
                             border: 1px solid #ddd;
                             border-radius: 5px;
                             overflow: hidden;
@@ -436,7 +443,8 @@
                         .pdf-month-header {
                             background-color: #f8f9fa;
                             font-weight: bold;
-                            padding: 10px 15px;
+                            font-size: 16px;
+                            padding: 12px 15px;
                             border-bottom: 1px solid #ddd;
                             color: #2c3e50;
                         }
@@ -444,8 +452,10 @@
                         .pdf-amount-row {
                             display: flex;
                             justify-content: space-between;
-                            padding: 8px 15px;
+                            padding: 10px 15px;
                             border-bottom: 1px solid #eee;
+                            min-height: 20px;
+                            align-items: center;
                         }
                         
                         .pdf-amount-row:last-child {
@@ -459,13 +469,16 @@
                         .pdf-description {
                             flex: 1;
                             color: #555;
+                            font-size: 14px;
+                            padding-right: 10px;
                         }
                         
                         .pdf-amount {
                             font-weight: bold;
                             color: #27ae60;
                             text-align: right;
-                            min-width: 80px;
+                            min-width: 100px;
+                            font-size: 14px;
                         }
                         
                         .pdf-total-row {
@@ -476,7 +489,14 @@
                         
                         .pdf-total-row .pdf-amount {
                             color: #27ae60;
-                            font-size: 14px;
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+                        
+                        .pdf-total-row .pdf-description {
+                            font-size: 15px;
+                            font-weight: bold;
+                            color: #2c3e50;
                         }
                     </style>
                 </head>
